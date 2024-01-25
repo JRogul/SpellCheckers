@@ -1,7 +1,5 @@
-def levenshtein_distance(word1, word2):
-    '''
-    Implementation based on pseudo code
-    '''
+def levenshtein_distance(word1, word2): #Implementation based on pseudo code
+    
     if len(word1) == 0:
         return len(word2)
     if len(word2) == 0:
@@ -16,5 +14,3 @@ def levenshtein_distance(word1, word2):
     levd3 = levdist(word1[1:], word2[1:]) 
 
     return indicator + min(levd1, levd2, levd3)
-
-levdist(word1, word2)
