@@ -4,19 +4,19 @@ def handle_single_insertion(str1, str2):
             return 1
     return 0
 
-def identify_and_suggest(word, wordlist):
+def identify_and_suggest(word_to_check, wordlist):
     list_of_possible_words = []
     for word in wordlist:
-        # Single letter insertion
-        if len(word) == len(word) + 1: 
-            diff = handle_single_insertion(word,word)
+
+        if len(word) == len(word_to_check) + 1: 
+            diff = handle_single_insertion(word_to_check,word)
         # Single letter delition
-        elif len(word) + 1 == len(word): 
-            diff = handle_single_insertion(word, word)
+        elif len(word) + 1 == len(word_to_check): 
+            diff = handle_single_insertion(word, word_to_check)
         # Substitution of one letter for another
-        elif len(word) == len(word): 
-            diff = sum(1 for char_word, char_word in zip(word, word) 
-                        if char_word != char_word)
+        elif len(word) == len(word_to_check): 
+            diff = sum(1 for char_word, char_wrong_word in zip(word, word_to_check) 
+                        if char_word != char_wrong_word)
         else:
             diff = 0
 
