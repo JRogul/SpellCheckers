@@ -7,7 +7,7 @@ def handle_single_insertion(str1, str2):
 def identify_and_suggest(word_to_check, wordlist):
     list_of_possible_words = []
     for word in wordlist:
-
+        # Single letter insertion
         if len(word) == len(word_to_check) + 1: 
             diff = handle_single_insertion(word_to_check,word)
         # Single letter delition
